@@ -1,0 +1,29 @@
+package Bsic;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SearchIn2dArray {
+    public static void main(String[] args) {
+        int[][] arr = {
+                {12, 4, 1},
+                {18, 12, 3, 9},
+                {78, 99, 34, 56},
+                {77,78}
+        };
+        Scanner in = new Scanner(System.in);
+        int target = in.nextInt();
+        int[] ans = search(arr, target);
+        System.out.println(Arrays.toString(ans));
+    }
+    static int[] search(int[][] arr, int target){
+        for (int i = 0; i <arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                if(arr[i][j] == target){
+                    return new int[] {i, j};
+                }
+            }
+        }
+        return new int[] {-1,-1};
+    }
+}
